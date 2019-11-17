@@ -1,0 +1,14 @@
+[Unit]
+Description=DHT22 Humidity and Temp Monitor
+After=pigpiod.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=pi
+WorkingDirectory = /home/pi/DHT22
+ExecStart=/usr/bin/python3 python.py
+
+[Install]
+WantedBy=multi-user.target
